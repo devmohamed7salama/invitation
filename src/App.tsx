@@ -54,7 +54,7 @@ function App() {
     <div className="relative min-h-screen bg-luxury-charcoal text-luxury-ivory overflow-hidden selection:bg-luxury-gold/30 selection:text-luxury-ivory">
       {/* Global Background Elements */}
       <BackgroundParticles />
-
+      
       {/* Background Music System */}
       <AudioPlayer isPlaying={audioPlaying} />
 
@@ -62,11 +62,12 @@ function App() {
       <Envelope onOpen={handleEnvelopeOpen} />
 
       {/* Main Wedding Content Container */}
-      <div
-        className={`transition-all duration-[2000ms] ease-[0.25,1,0.5,1] ${envelopeOpened
-            ? 'opacity-100 filter-none pointer-events-auto'
+      <div 
+        className={`transition-all duration-[2000ms] ease-[0.25,1,0.5,1] ${
+          envelopeOpened 
+            ? 'opacity-100 filter-none pointer-events-auto' 
             : 'opacity-0 blur-2xl pointer-events-none max-h-screen overflow-hidden'
-          }`}
+        }`}
       >
         {envelopeOpened && (
           <>
@@ -112,9 +113,9 @@ function App() {
                 </p>
                 <p className="text-[8px] uppercase tracking-[0.2em] text-luxury-gold/45">
                   Developed by{' '}
-                  <a
-                    href="https://dev-mohamed-salama.vercel.app/"
-                    target="_blank"
+                  <a 
+                    href="https://dev-mohamed-salama.vercel.app/" 
+                    target="_blank" 
                     rel="noopener noreferrer"
                     className="hover:text-luxury-gold-light transition-colors underline decoration-luxury-gold/20"
                   >
