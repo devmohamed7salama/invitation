@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="44" fill="none" stroke="#c5a880" stroke-width="3" opacity="0.9"/>
+  <circle cx="50" cy="50" r="39" fill="none" stroke="#c5a880" stroke-width="1.5" stroke-dasharray="3 4" opacity="0.6"/>
+  <path d="M 50,72 C 50,72 24,53 24,35 C 24,24 33,16 43,16 C 47,16 50,18 50,18 C 50,18 53,16 57,16 C 67,16 76,24 76,35 C 76,53 50,72 50,72 Z" fill="#c5a880"/>
+  <text x="50" y="42" font-family="serif" font-size="10" font-weight="bold" fill="#0a0a0a" text-anchor="middle" letter-spacing="1">H&amp;Y</text>
+</svg>

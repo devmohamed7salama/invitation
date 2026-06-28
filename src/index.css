@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Outfit", system-ui, sans-serif;
+  --color-luxury-gold: #c5a880;
+  --color-luxury-gold-light: #ecdcb9;
+  --color-luxury-gold-dark: #886c26;
+  --color-luxury-ivory: #faf8f5;
+  --color-luxury-charcoal: #0a0a0a;
+  --color-luxury-beige: #f5ebe6;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #c5a880;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ecdcb9;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #0a0a0a;
+  color: #faf8f5;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Root sizing overrides from template */
+#root {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  text-align: left !important;
+  border-inline: none !important;
+  min-height: auto !important;
+  display: block !important;
+  box-sizing: border-box !important;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(15, 15, 15, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(197, 168, 128, 0.15);
+}
+
+.glass-panel-light {
+  background: rgba(250, 248, 245, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 168, 128, 0.25);
+}
+
+/* Custom 3D Book Page Flip Styles */
+.perspective-1500 {
+  perspective: 1500px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(-180deg);
+}
+
+/* Custom transitions and glow effects */
+.gold-glow {
+  text-shadow: 0 0 10px rgba(197, 168, 128, 0.4), 0 0 20px rgba(197, 168, 128, 0.2);
+}
+
+.gold-border-glow {
+  box-shadow: 0 0 15px rgba(197, 168, 128, 0.2);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #f3e7c4 0%, #c5a880 50%, #ecdcb9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #c5a880 0%, #ecdcb9 50%, #886c26 100%);
+}
+
+/* Mask styles for text reveal and particle layering */
+.light-ray-effect {
+  background: radial-gradient(circle 600px at 50% -100px, rgba(197, 168, 128, 0.15), transparent 80%);
+}
