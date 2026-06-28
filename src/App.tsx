@@ -108,8 +108,19 @@ function App() {
                   July 19, 2026 • AGA, Egypt
                 </p>
                 <div className="h-[1px] w-8 bg-luxury-gold/30 mb-8" />
-                <p className="text-[9px] uppercase tracking-[0.25em] text-luxury-beige/40">
+                <p className="text-[9px] uppercase tracking-[0.25em] text-luxury-beige/40 mb-3">
                   Made with love • Thank you for celebrating with us
+                </p>
+                <p className="text-[8px] uppercase tracking-[0.2em] text-luxury-gold/45">
+                  Developed by{' '}
+                  <a 
+                    href="https://dev-mohamed-salama.vercel.app/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-luxury-gold-light transition-colors underline decoration-luxury-gold/20"
+                  >
+                    Mohamed Salama
+                  </a>
                 </p>
               </div>
             </footer>
