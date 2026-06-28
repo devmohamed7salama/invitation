@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Volume2, VolumeX } from 'lucide-react';
 import gsap from 'gsap';
+import weddingMusic from '../assets/music.mp4';
 
 interface AudioPlayerProps {
   isPlaying: boolean;
@@ -13,8 +14,8 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ isPlaying }) => {
   const audioCtxRef = useRef<AudioContext | null>(null);
   const [usingSynth, setUsingSynth] = useState(false);
 
-  // URL of a premium, royalty-free classical wedding piano track (Chopin Nocturne in E-flat Major)
-  const trackUrl = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3'; // Instrumental ambient track
+  // Custom audio track from the uploaded MP4 file
+  const trackUrl = weddingMusic;
 
   useEffect(() => {
     // Initialize Audio element
