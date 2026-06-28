@@ -2,6 +2,16 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
+// Import local gallery images
+import img1 from '../assets/gallary/H-Y (1).jpg';
+import img2 from '../assets/gallary/H-Y (2).jpg';
+import img3 from '../assets/gallary/H-Y (3).jpg';
+import img4 from '../assets/gallary/H-Y (4).jpg';
+import img5 from '../assets/gallary/H-Y (5).jpg';
+import img6 from '../assets/gallary/H-Y (6).jpg';
+import img7 from '../assets/gallary/H-Y (7).jpg';
+import img8 from '../assets/gallary/H-Y (8).jpg';
+
 interface GalleryImage {
   id: number;
   url: string;
@@ -13,54 +23,14 @@ export const Gallery: React.FC = () => {
   const [activeImageIdx, setActiveImageIdx] = useState<number | null>(null);
 
   const images: GalleryImage[] = [
-    {
-      id: 1,
-      url: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600&auto=format&fit=crop',
-      title: 'The Ceremony Hall',
-      category: 'Venue',
-    },
-    {
-      id: 2,
-      url: 'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=800&auto=format&fit=crop',
-      title: 'Our Promise',
-      category: 'Couple',
-    },
-    {
-      id: 3,
-      url: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=700&auto=format&fit=crop',
-      title: 'The Toast',
-      category: 'Celebration',
-    },
-    {
-      id: 4,
-      url: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=600&auto=format&fit=crop',
-      title: 'The Rings',
-      category: 'Details',
-    },
-    {
-      id: 5,
-      url: 'https://images.unsplash.com/photo-1507504038482-7621c83b27b9?q=80&w=800&auto=format&fit=crop',
-      title: 'Golden Hour Walk',
-      category: 'Couple',
-    },
-    {
-      id: 6,
-      url: 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=600&auto=format&fit=crop',
-      title: 'The Invitation Detail',
-      category: 'Details',
-    },
-    {
-      id: 7,
-      url: 'https://images.unsplash.com/photo-1544078751-58fed2b3b86a?q=80&w=700&auto=format&fit=crop',
-      title: 'A Moment Together',
-      category: 'Couple',
-    },
-    {
-      id: 8,
-      url: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=700&auto=format&fit=crop',
-      title: 'Parisian Lights',
-      category: 'Venue',
-    }
+    { id: 1, url: img1, title: 'Golden Moments', category: 'Portrait' },
+    { id: 2, url: img2, title: 'The Royal Entrance', category: 'Venue' },
+    { id: 3, url: img3, title: 'In Your Eyes', category: 'Candid' },
+    { id: 4, url: img4, title: 'Hand in Hand', category: 'Portrait' },
+    { id: 5, url: img5, title: 'A Blessed Journey', category: 'Ceremony' },
+    { id: 6, url: img6, title: 'Unconditional Love', category: 'Candid' },
+    { id: 7, url: img7, title: 'Pure Joy', category: 'Celebration' },
+    { id: 8, url: img8, title: 'The Beginning of Us', category: 'Portrait' },
   ];
 
   const handlePrev = (e: React.MouseEvent) => {
@@ -77,17 +47,16 @@ export const Gallery: React.FC = () => {
     }
   };
 
-  // Simple mouse move tilt effect for cards
+  // Tilt effect for desktop hover
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const card = e.currentTarget;
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
     
-    // Calculate rotation values
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
-    const rotateX = -(y - centerY) / 25; // max tilt 10deg
+    const rotateX = -(y - centerY) / 25;
     const rotateY = (x - centerX) / 25;
 
     card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
@@ -144,7 +113,7 @@ export const Gallery: React.FC = () => {
               </h4>
             </div>
             
-            {/* Elegant luxury corner border accents */}
+            {/* Corner border accents */}
             <div className="absolute inset-4 border border-luxury-gold/0 hover:border-luxury-gold/15 pointer-events-none transition-all duration-350" />
           </motion.div>
         ))}
@@ -170,10 +139,10 @@ export const Gallery: React.FC = () => {
               <X size={28} />
             </button>
 
-            {/* Navigation controls */}
+            {/* Navigation Controls (Durable backdrop-shielded touch targets for Mobile) */}
             <button
               onClick={handlePrev}
-              className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-luxury-gold/20 flex items-center justify-center text-luxury-ivory hover:bg-luxury-gold/10 hover:text-luxury-gold transition-all cursor-pointer z-40"
+              className="absolute left-3 md:left-8 top-1/2 -translate-y-1/2 w-11 h-11 md:w-14 md:h-14 rounded-full border border-luxury-gold/30 bg-black/70 backdrop-blur-sm flex items-center justify-center text-luxury-gold hover:text-luxury-ivory active:scale-90 transition-all cursor-pointer z-50 shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
               aria-label="Previous gallery image"
             >
               <ChevronLeft size={24} />
@@ -181,7 +150,7 @@ export const Gallery: React.FC = () => {
             
             <button
               onClick={handleNext}
-              className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-luxury-gold/20 flex items-center justify-center text-luxury-ivory hover:bg-luxury-gold/10 hover:text-luxury-gold transition-all cursor-pointer z-40"
+              className="absolute right-3 md:right-8 top-1/2 -translate-y-1/2 w-11 h-11 md:w-14 md:h-14 rounded-full border border-luxury-gold/30 bg-black/70 backdrop-blur-sm flex items-center justify-center text-luxury-gold hover:text-luxury-ivory active:scale-90 transition-all cursor-pointer z-50 shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
               aria-label="Next gallery image"
             >
               <ChevronRight size={24} />
@@ -201,7 +170,7 @@ export const Gallery: React.FC = () => {
                 alt={images[activeImageIdx].title}
                 className="max-w-full max-h-[80vh] object-contain"
               />
-              {/* Bottom bar caption */}
+              {/* Bottom Caption Bar */}
               <div className="absolute bottom-0 inset-x-0 bg-black/60 p-4 border-t border-luxury-gold/10 flex justify-between items-center text-xs">
                 <span className="font-serif text-sm text-luxury-ivory">
                   {images[activeImageIdx].title}

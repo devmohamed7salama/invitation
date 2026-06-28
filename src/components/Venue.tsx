@@ -28,7 +28,7 @@ export const Venue: React.FC = () => {
       locationName: "Al Wakeel Hall",
       locationAddress: "Baqtars, AGA, Dakahlia Governorate, Egypt",
       locationSubtitle: "Al Wakeel Hall (قاعة الوكيل ببقطارس)",
-      date: "Wednesday, June 17, 2026",
+      date: "Wednesday, June 16, 2026",
       dateSubtitle: "Henna Celebration Commences",
       time: "Celebration starts at 9:00 PM.",
       timeSubtitle: "Bride's Henna Night (حنة العروسة)",

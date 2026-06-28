@@ -177,7 +177,10 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ isPlaying }) => {
   if (!isPlaying) return null;
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">
+    <div 
+      className="fixed bottom-[calc(1.5rem+env(safe-area-inset-bottom))] right-6 z-50 flex items-center gap-3"
+      style={{ transform: 'translate3d(0,0,0)', WebkitTransform: 'translate3d(0,0,0)' }}
+    >
       {/* Sound waves visualizer */}
       <div className="flex items-end gap-[3px] h-5 px-1">
         {[1, 2, 3, 4, 5].map((i) => (

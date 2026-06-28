@@ -8,7 +8,7 @@ import { SaveTheDateCalendar } from './components/SaveTheDateCalendar';
 import { Timeline } from './components/Timeline';
 import { PalaceShowcase } from './components/PalaceShowcase';
 import { MemoryBook } from './components/MemoryBook';
-// import { Gallery } from './components/Gallery';
+import { Gallery } from './components/Gallery';
 import { Venue } from './components/Venue';
 import Lenis from 'lenis';
 
@@ -90,7 +90,7 @@ function App() {
             <MemoryBook />
 
             {/* Masonry Image Gallery */}
-            {/* <Gallery /> */}
+            <Gallery />
 
             {/* Logistics & RSVP Form */}
             <Venue />
