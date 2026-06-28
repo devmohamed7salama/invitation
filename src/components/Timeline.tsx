@@ -27,25 +27,25 @@ export const Timeline: React.FC = () => {
   const milestones: Milestone[] = [
     {
       date: '15/7/2022',
-      title: 'Our First Meeting • أول لقاء',
+      title: 'Our First Meeting',
       description: 'The beautiful day our paths crossed for the very first time, starting a conversation that would grow to define our lives.',
       image: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=400&auto=format&fit=crop',
     },
     {
       date: '16/4/2024',
-      title: 'Reading Al-Fatiha • قراءة الفاتحة',
+      title: 'Reading Al-Fatiha ',
       description: 'A blessed day surrounded by family as we officially read Al-Fatiha, sealing our promise and commitment to build our future together.',
       image: 'https://images.unsplash.com/photo-1574155204999-0ef31e698aee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     {
       date: '18/4/2024',
-      title: 'The Engagement • يوم الخطوبة',
+      title: 'The Engagement',
       description: 'Declaring our love to the world, exchanging rings, and taking the next major step on the road to our lifetime journey.',
       image: imgEngaged,
     },
     {
       date: '19/7/2026',
-      title: 'The Wedding Day • يوم الفرح',
+      title: 'The Wedding Day',
       description: 'Exchanging our lifetime vows and celebrating the official union of our hearts as husband and wife at Al Wadi Hall.',
       image: 'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=400&auto=format&fit=crop',
     },
