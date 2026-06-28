@@ -1,5 +1,116 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 
+interface FloralCornerProps {
+  className?: string;
+  rotation?: number;
+}
+
+const FloralCorner: React.FC<FloralCornerProps> = ({ className, rotation = 0 }) => {
+  return (
+    <svg
+      viewBox="0 0 120 120"
+      className={className}
+      style={{ transform: `rotate(${rotation}deg)` }}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <linearGradient id="floral-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#ecdcb9" />
+          <stop offset="50%" stopColor="#c5a880" />
+          <stop offset="100%" stopColor="#886c26" />
+        </linearGradient>
+      </defs>
+      {/* Elegant curves representing vines */}
+      <path
+        d="M 6,6 C 30,15 50,10 65,30 C 75,40 80,55 83,70"
+        stroke="url(#floral-gold)"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        opacity="0.85"
+      />
+      <path
+        d="M 6,6 C 15,30 10,50 30,65 C 40,75 55,80 70,83"
+        stroke="url(#floral-gold)"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        opacity="0.85"
+      />
+      
+      {/* Rose outlines / abstract luxury flower petals */}
+      <path
+        d="M 14,14 C 12,10 16,7 20,9 C 24,11 26,16 22,20 C 18,24 12,22 14,14 Z"
+        stroke="url(#floral-gold)"
+        strokeWidth="1"
+        fill="url(#floral-gold)"
+        fillOpacity="0.15"
+      />
+      <path
+        d="M 18,18 C 16,14 20,11 24,13 C 28,15 30,20 26,24 C 22,28 16,26 18,18 Z"
+        stroke="url(#floral-gold)"
+        strokeWidth="1"
+        fill="url(#floral-gold)"
+        fillOpacity="0.2"
+      />
+      
+      {/* Outer petal flourishes */}
+      <path
+        d="M 10,20 C 6,16 8,10 14,8 C 20,6 24,10 22,16 C 20,22 14,24 10,20 Z"
+        stroke="url(#floral-gold)"
+        strokeWidth="1.2"
+        opacity="0.9"
+      />
+      <path
+        d="M 16,16 A 3,3 0 1 1 19,19 A 2,2 0 1 1 17,17"
+        stroke="url(#floral-gold)"
+        strokeWidth="1"
+      />
+      
+      {/* Leaves */}
+      <path
+        d="M 38,20 C 45,15 53,18 55,19 C 53,25 45,27 38,20 Z"
+        fill="url(#floral-gold)"
+        opacity="0.75"
+      />
+      <path
+        d="M 20,38 C 15,45 18,53 19,55 C 25,53 27,45 20,38 Z"
+        fill="url(#floral-gold)"
+        opacity="0.75"
+      />
+      <path
+        d="M 55,36 C 61,31 69,33 71,34 C 69,40 61,42 55,36 Z"
+        fill="url(#floral-gold)"
+        opacity="0.6"
+      />
+      <path
+        d="M 36,55 C 31,61 33,69 34,71 C 40,69 42,61 36,55 Z"
+        fill="url(#floral-gold)"
+        opacity="0.6"
+      />
+      
+      {/* Swirly branches */}
+      <path
+        d="M 48,13 C 58,10 63,20 61,26 C 59,32 51,30 53,24"
+        stroke="url(#floral-gold)"
+        strokeWidth="0.8"
+        strokeLinecap="round"
+      />
+      <path
+        d="M 13,48 C 10,58 20,63 26,61 C 32,59 30,51 24,53"
+        stroke="url(#floral-gold)"
+        strokeWidth="0.8"
+        strokeLinecap="round"
+      />
+      
+      {/* Elegant accent dots */}
+      <circle cx="71" cy="20" r="2" fill="url(#floral-gold)" />
+      <circle cx="20" cy="71" r="2" fill="url(#floral-gold)" />
+      <circle cx="81" cy="40" r="1.5" fill="url(#floral-gold)" />
+      <circle cx="40" cy="81" r="1.5" fill="url(#floral-gold)" />
+    </svg>
+  );
+};
+
 export const Hero: React.FC = () => {
   const { scrollY } = useScroll();
 
@@ -37,6 +148,27 @@ export const Hero: React.FC = () => {
 
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-luxury-charcoal">
+      {/* Luxury Animated Floral Frame */}
+      <motion.div
+        initial={{ scale: 1.35, rotate: -3, opacity: 0 }}
+        animate={{ scale: 1, rotate: 0, opacity: 1 }}
+        transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+        className="absolute inset-3 sm:inset-6 pointer-events-none z-10 select-none will-change-transform"
+      >
+        {/* Double geometric border */}
+        <div className="absolute inset-0 border border-luxury-gold/15">
+          <div className="absolute inset-[3px] border border-luxury-gold/30" />
+        </div>
+
+        {/* Primary Corners */}
+        <FloralCorner className="absolute -top-3 -left-3 w-20 h-20 sm:w-28 sm:h-28 text-luxury-gold" rotation={0} />
+        <FloralCorner className="absolute -bottom-3 -right-3 w-20 h-20 sm:w-28 sm:h-28 text-luxury-gold" rotation={180} />
+
+        {/* Secondary Corners (for unique asymmetric look, smaller and softer) */}
+        <FloralCorner className="absolute -top-3 -right-3 w-14 h-14 sm:w-20 sm:h-20 text-luxury-gold opacity-60" rotation={90} />
+        <FloralCorner className="absolute -bottom-3 -left-3 w-14 h-14 sm:w-20 sm:h-20 text-luxury-gold opacity-60" rotation={270} />
+      </motion.div>
+
       {/* Background Volumetric Light Ray and Parallax Layer */}
       <motion.div
         style={{ y: bgY }}
