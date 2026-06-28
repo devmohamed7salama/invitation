@@ -181,7 +181,7 @@ export const Envelope: React.FC<EnvelopeProps> = ({ onOpen }) => {
           {/* Self-Drawing Floral Vines & Hearts Background */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden select-none opacity-40">
             {/* Left Floral Vine */}
-            <svg className="absolute left-[-20px] top-[10%] w-[300px] h-[500px] text-luxury-gold/25 hidden sm:block" viewBox="0 0 100 200">
+            <svg className="absolute left-0 sm:left-[-20px] top-[2%] sm:top-[10%] w-[130px] sm:w-[260px] md:w-[300px] h-[250px] sm:h-[450px] md:h-[500px] text-luxury-gold/25" viewBox="0 0 100 200">
               <motion.path
                 d="M 10,180 Q 30,120 15,80 T 45,20"
                 fill="none"
@@ -232,7 +232,7 @@ export const Envelope: React.FC<EnvelopeProps> = ({ onOpen }) => {
             </svg>
 
             {/* Right Floral Vine with Hearts */}
-            <svg className="absolute right-[-20px] bottom-[10%] w-[300px] h-[500px] text-luxury-gold/25 hidden sm:block" viewBox="0 0 100 200">
+            <svg className="absolute right-0 sm:right-[-20px] bottom-[2%] sm:bottom-[10%] w-[130px] sm:w-[260px] md:w-[300px] h-[250px] sm:h-[450px] md:h-[500px] text-luxury-gold/25" viewBox="0 0 100 200">
               <motion.path
                 d="M 90,20 Q 70,80 85,120 T 55,180"
                 fill="none"
