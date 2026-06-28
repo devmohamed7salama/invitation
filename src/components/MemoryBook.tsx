@@ -137,6 +137,17 @@ export const MemoryBook: React.FC = () => {
                   className="flex-1 flex flex-col justify-between z-10"
                 >
                   <div>
+                    {/* Mobile Image (Only visible on mobile screens) */}
+                    {pages[currentPage].image && (
+                      <div className="block md:hidden relative w-full h-44 rounded-lg overflow-hidden mb-5 border border-luxury-gold/15 shadow-inner">
+                        <img
+                          src={pages[currentPage].image}
+                          alt={pages[currentPage].title}
+                          className="w-full h-full object-cover filter brightness-[0.8] sepia-[0.1]"
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
                     <span className="text-[10px] uppercase tracking-[0.25em] text-luxury-gold font-light block mb-1">
                       {pages[currentPage].subtitle}
                     </span>

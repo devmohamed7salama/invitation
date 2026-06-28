@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Volume2, VolumeX } from 'lucide-react';
 import gsap from 'gsap';
-import weddingMusic from '../assets/music.mp4';
+import weddingMusic from '../assets/music.m4a';
 
 interface AudioPlayerProps {
   isPlaying: boolean;
