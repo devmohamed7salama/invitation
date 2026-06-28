@@ -113,14 +113,14 @@ export const Timeline: React.FC = () => {
                   whileInView={{ opacity: 1, x: 0, y: 0 }}
                   viewport={{ once: true, margin: '-100px' }}
                   transition={{ duration: 1.0, ease: [0.25, 1, 0.5, 1] }}
-                  className={`w-full md:w-[45%] ml-10 md:ml-0 ${
+                  className={`w-[calc(100%-2.5rem)] md:w-[45%] ml-10 md:ml-0 ${
                     isEven ? 'md:text-right md:pr-12' : 'md:pl-12'
                   }`}
                 >
                   {/* Glass Card styling */}
                   <div className="glass-panel p-6 sm:p-8 rounded-xl border border-luxury-gold/10 hover:border-luxury-gold/30 hover:shadow-[0_10px_25px_rgba(197,168,128,0.05)] transition-all duration-500 text-left">
                     {item.image && (
-                      <div className="relative w-full h-44 rounded-lg overflow-hidden mb-4 border border-luxury-gold/10">
+                      <div className="relative w-full h-36 sm:h-44 rounded-lg overflow-hidden mb-4 border border-luxury-gold/10">
                         <img
                           src={item.image}
                           alt={item.title}
