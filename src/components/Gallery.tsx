@@ -80,8 +80,11 @@ export const Gallery: React.FC = () => {
         <div className="h-[1px] w-12 bg-luxury-gold/50 mx-auto mt-6" />
       </div>
 
-      {/* Masonry Layout Container */}
-      <div className="max-w-6xl mx-auto columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+      {/* Masonry Layout on Desktop / Horizontal Scroll on Mobile */}
+      <div 
+        className="max-w-6xl mx-auto flex md:block overflow-x-auto md:overflow-x-visible snap-x snap-mandatory gap-5 pb-8 md:pb-0 md:columns-2 lg:columns-3 md:gap-6 md:space-y-6"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      >
         {images.map((img, idx) => (
           <motion.div
             key={img.id}
@@ -89,7 +92,7 @@ export const Gallery: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.8, delay: (idx % 3) * 0.15, ease: 'easeOut' }}
-            className="break-inside-avoid relative overflow-hidden rounded-xl border border-luxury-gold/10 bg-luxury-charcoal cursor-pointer transition-all duration-350 ease-out"
+            className="w-[280px] shrink-0 snap-center md:w-full md:break-inside-avoid relative overflow-hidden rounded-xl border border-luxury-gold/10 bg-luxury-charcoal cursor-pointer transition-all duration-350 ease-out"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             onClick={() => setActiveImageIdx(idx)}
@@ -99,7 +102,7 @@ export const Gallery: React.FC = () => {
             <img
               src={img.url}
               alt={img.title}
-              className="w-full object-cover filter brightness-[0.75] hover:brightness-[0.9] transition-all duration-700 pointer-events-none"
+              className="w-full h-72 md:h-auto object-cover filter brightness-[0.75] hover:brightness-[0.9] transition-all duration-700 pointer-events-none"
               loading="lazy"
             />
 

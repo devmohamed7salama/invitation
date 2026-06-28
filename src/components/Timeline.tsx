@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
-
+import imgEngaged from '../assets/engag.jpeg';
 interface Milestone {
   date: string;
   title: string;
@@ -41,7 +41,7 @@ export const Timeline: React.FC = () => {
       date: '18/4/2024',
       title: 'The Engagement • يوم الخطوبة',
       description: 'Declaring our love to the world, exchanging rings, and taking the next major step on the road to our lifetime journey.',
-      image: 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=400&auto=format&fit=crop',
+      image: imgEngaged,
     },
     {
       date: '19/7/2026',

@@ -178,6 +178,118 @@ export const Envelope: React.FC<EnvelopeProps> = ({ onOpen }) => {
           {/* Luxury background paper texture overlay */}
           <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#c5a880_1px,transparent_1px)] [background-size:16px_16px]" />
 
+          {/* Self-Drawing Floral Vines & Hearts Background */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden select-none opacity-40">
+            {/* Left Floral Vine */}
+            <svg className="absolute left-[-20px] top-[10%] w-[300px] h-[500px] text-luxury-gold/25 hidden sm:block" viewBox="0 0 100 200">
+              <motion.path
+                d="M 10,180 Q 30,120 15,80 T 45,20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="0.8"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 2.0, delay: 0.1, ease: "easeInOut" }}
+              />
+              <motion.path
+                d="M 15,80 Q 5,60 10,40"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="0.6"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 1.2, delay: 0.8, ease: "easeInOut" }}
+              />
+              <motion.path
+                d="M 30,120 Q 45,110 40,90"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="0.6"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 1.2, delay: 1.1, ease: "easeInOut" }}
+              />
+              {/* Left Side little heart */}
+              <motion.path
+                d="M 40,90 C 40,88 38,85 35,87 C 32,85 30,88 30,90 C 30,93 35,96 35,96 C 35,96 40,93 40,90 Z"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="0.6"
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 0.8 }}
+                transition={{ duration: 0.8, delay: 1.5, type: "spring" }}
+              />
+              {/* Little rose bud at the top */}
+              <motion.path
+                d="M 45,20 C 42,15 48,10 50,15 C 52,10 58,15 55,20 C 52,25 48,25 45,20 Z"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="0.8"
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 1.6, type: "spring" }}
+              />
+            </svg>
+
+            {/* Right Floral Vine with Hearts */}
+            <svg className="absolute right-[-20px] bottom-[10%] w-[300px] h-[500px] text-luxury-gold/25 hidden sm:block" viewBox="0 0 100 200">
+              <motion.path
+                d="M 90,20 Q 70,80 85,120 T 55,180"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="0.8"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 2.0, delay: 0.2, ease: "easeInOut" }}
+              />
+              <motion.path
+                d="M 85,120 Q 95,140 90,160"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="0.6"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 1.2, delay: 0.9, ease: "easeInOut" }}
+              />
+              {/* Little heart at the bottom */}
+              <motion.path
+                d="M 55,180 C 55,178 53,175 50,177 C 47,175 45,178 45,180 C 45,183 50,186 50,186 C 50,186 55,183 55,180 Z"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="0.8"
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 1.6, type: "spring" }}
+              />
+            </svg>
+          </div>
+
+          {/* Ambient light dust particles */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
+            {[...Array(12)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-1 h-1 bg-luxury-gold/35 rounded-full"
+                style={{
+                  left: `${15 + (i * 73) % 70}%`,
+                  top: `${20 + (i * 47) % 65}%`,
+                }}
+                animate={{
+                  y: [-20, -100, -20],
+                  x: [0, Math.sin(i) * 15, 0],
+                  opacity: [0.1, 0.4, 0.1],
+                  scale: [0.8, 1.2, 0.8],
+                }}
+                transition={{
+                  duration: 8 + (i % 4) * 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: i * 0.4,
+                }}
+              />
+            ))}
+          </div>
+
           {/* Invitation text header */}
           <div className="absolute top-12 left-0 right-0 text-center px-4 select-none">
             <motion.p
