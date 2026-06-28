@@ -547,7 +547,7 @@ const MagicalFlowers: React.FC = () => {
           transform: rotate(-48deg) rotateY(40deg);
         }
         .flower__grass--1 {
-          animation: moving-grass 2s linear infinite;
+          /* Static grass */
         }
         .flower__grass--2 {
           left: 2vmin;
@@ -555,7 +555,7 @@ const MagicalFlowers: React.FC = () => {
           transform: scale(0.5) rotate(75deg) rotateX(10deg) rotateY(-200deg);
           opacity: 0.8;
           z-index: 0;
-          animation: moving-grass--2 1.5s linear infinite;
+          /* Static grass */
         }
         .flower__grass--top {
           width: 7vmin;
@@ -714,7 +714,7 @@ const MagicalFlowers: React.FC = () => {
           display: flex;
           flex-direction: column;
           align-items: flex-end;
-          animation: flower-g-long-ans 3s linear infinite;
+          /* Static stem */
         }
         .flower__g-long__top {
           top: calc(var(--h) * -1);
@@ -753,12 +753,12 @@ const MagicalFlowers: React.FC = () => {
           -webkit-mask-image: linear-gradient(to top, transparent 30%, var(--fl-color-leaf-dark) 60%);
         }
         .flower__g-right--1 {
-          animation: flower-g-right-ans 2.5s linear infinite;
+          /* Static stem */
         }
         .flower__g-right--2 {
           left: 5vmin;
           transform: rotateY(-180deg);
-          animation: flower-g-right-ans--2 3s linear infinite;
+          /* Static stem */
         }
         .flower__g-right--2 .leaf {
           height: 75vmin;
@@ -773,7 +773,7 @@ const MagicalFlowers: React.FC = () => {
           z-index: 100;
           transform-origin: bottom center;
           transform: rotate(-28deg) rotateY(30deg) scale(1.04);
-          animation: flower__g-front-ans 2s linear infinite;
+          /* Static stem */
         }
         .flower__g-front__line {
           width: 0.3vmin;
@@ -883,7 +883,7 @@ const MagicalFlowers: React.FC = () => {
           left: 10vmin;
           transform-origin: bottom left;
           z-index: 10;
-          animation: flower__g-fr-ans 2s linear infinite;
+          /* Static stem */
         }
         .flower__g-fr .leaf {
           width: 30vmin;
@@ -1076,12 +1076,10 @@ const MagicalFlowers: React.FC = () => {
         }
         .long-g .leaf--0 {
           left: 2vmin;
-          animation: leaf-ans-1 4s linear infinite;
         }
         .long-g .leaf--1 {
           --w: 5vmin;
           --h: 60vmin;
-          animation: leaf-ans-1 4s linear infinite;
         }
         .long-g .leaf--2 {
           --w: 10vmin;
@@ -1090,7 +1088,6 @@ const MagicalFlowers: React.FC = () => {
           bottom: 5vmin;
           transform-origin: bottom left;
           transform: rotateY(-180deg);
-          animation: leaf-ans-2 3s linear infinite;
         }
         .long-g .leaf--3 {
           --w: 5vmin;
@@ -1099,7 +1096,6 @@ const MagicalFlowers: React.FC = () => {
           bottom: 3.2vmin;
           transform-origin: bottom left;
           transform: rotate(-10deg) rotateY(-180deg);
-          animation: leaf-ans-3 3s linear infinite;
         }
 
         .grow-ans {
@@ -1254,15 +1250,6 @@ const MagicalFlowers: React.FC = () => {
           <div className="flower__leaf flower__leaf--3"></div>
           <div className="flower__leaf flower__leaf--4"></div>
           <div className="flower__white-circle"></div>
-
-          <div className="flower__light flower__light--1"></div>
-          <div className="flower__light flower__light--2"></div>
-          <div className="flower__light flower__light--3"></div>
-          <div className="flower__light flower__light--4"></div>
-          <div className="flower__light flower__light--5"></div>
-          <div className="flower__light flower__light--6"></div>
-          <div className="flower__light flower__light--7"></div>
-          <div className="flower__light flower__light--8"></div>
         </div>
         <div className="flower__line">
           <div className="flower__line__leaf flower__line__leaf--1"></div>
@@ -1281,15 +1268,6 @@ const MagicalFlowers: React.FC = () => {
           <div className="flower__leaf flower__leaf--3"></div>
           <div className="flower__leaf flower__leaf--4"></div>
           <div className="flower__white-circle"></div>
-
-          <div className="flower__light flower__light--1"></div>
-          <div className="flower__light flower__light--2"></div>
-          <div className="flower__light flower__light--3"></div>
-          <div className="flower__light flower__light--4"></div>
-          <div className="flower__light flower__light--5"></div>
-          <div className="flower__light flower__light--6"></div>
-          <div className="flower__light flower__light--7"></div>
-          <div className="flower__light flower__light--8"></div>
         </div>
         <div className="flower__line">
           <div className="flower__line__leaf flower__line__leaf--1"></div>
@@ -1306,15 +1284,6 @@ const MagicalFlowers: React.FC = () => {
           <div className="flower__leaf flower__leaf--3"></div>
           <div className="flower__leaf flower__leaf--4"></div>
           <div className="flower__white-circle"></div>
-
-          <div className="flower__light flower__light--1"></div>
-          <div className="flower__light flower__light--2"></div>
-          <div className="flower__light flower__light--3"></div>
-          <div className="flower__light flower__light--4"></div>
-          <div className="flower__light flower__light--5"></div>
-          <div className="flower__light flower__light--6"></div>
-          <div className="flower__light flower__light--7"></div>
-          <div className="flower__light flower__light--8"></div>
         </div>
         <div className="flower__line">
           <div className="flower__line__leaf flower__line__leaf--1"></div>
@@ -1419,21 +1388,7 @@ const MagicalFlowers: React.FC = () => {
         </div>
       </div>
 
-      <div className="long-g long-g--0">
-        <div className="grow-ans" style={{ "--d": "3s" } as React.CSSProperties}>
-          <div className="leaf leaf--0"></div>
-        </div>
-        <div className="grow-ans" style={{ "--d": "2.2s" } as React.CSSProperties}>
-          <div className="leaf leaf--1"></div>
-        </div>
-        <div className="grow-ans" style={{ "--d": "3.4s" } as React.CSSProperties}>
-          <div className="leaf leaf--2"></div>
-        </div>
-        <div className="grow-ans" style={{ "--d": "3.6s" } as React.CSSProperties}>
-          <div className="leaf leaf--3"></div>
-        </div>
-      </div>
-
+      {/* Optimized base grass layer: Reduced from 8 to 3 elements */}
       <div className="long-g long-g--1">
         <div className="grow-ans" style={{ "--d": "3.6s" } as React.CSSProperties}>
           <div className="leaf leaf--0"></div>
@@ -1449,37 +1404,7 @@ const MagicalFlowers: React.FC = () => {
         </div>
       </div>
 
-      <div className="long-g long-g--2">
-        <div className="grow-ans" style={{ "--d": "4s" } as React.CSSProperties}>
-          <div className="leaf leaf--0"></div>
-        </div>
-        <div className="grow-ans" style={{ "--d": "4.2s" } as React.CSSProperties}>
-          <div className="leaf leaf--1"></div>
-        </div>
-        <div className="grow-ans" style={{ "--d": "4.4s" } as React.CSSProperties}>
-          <div className="leaf leaf--2"></div>
-        </div>
-        <div className="grow-ans" style={{ "--d": "4.6s" } as React.CSSProperties}>
-          <div className="leaf leaf--3"></div>
-        </div>
-      </div>
-
       <div className="long-g long-g--3">
-        <div className="grow-ans" style={{ "--d": "4s" } as React.CSSProperties}>
-          <div className="leaf leaf--0"></div>
-        </div>
-        <div className="grow-ans" style={{ "--d": "4.2s" } as React.CSSProperties}>
-          <div className="leaf leaf--1"></div>
-        </div>
-        <div className="grow-ans" style={{ "--d": "3s" } as React.CSSProperties}>
-          <div className="leaf leaf--2"></div>
-        </div>
-        <div className="grow-ans" style={{ "--d": "3.6s" } as React.CSSProperties}>
-          <div className="leaf leaf--3"></div>
-        </div>
-      </div>
-
-      <div className="long-g long-g--4">
         <div className="grow-ans" style={{ "--d": "4s" } as React.CSSProperties}>
           <div className="leaf leaf--0"></div>
         </div>
@@ -1502,36 +1427,6 @@ const MagicalFlowers: React.FC = () => {
           <div className="leaf leaf--1"></div>
         </div>
         <div className="grow-ans" style={{ "--d": "3s" } as React.CSSProperties}>
-          <div className="leaf leaf--2"></div>
-        </div>
-        <div className="grow-ans" style={{ "--d": "3.6s" } as React.CSSProperties}>
-          <div className="leaf leaf--3"></div>
-        </div>
-      </div>
-
-      <div className="long-g long-g--6">
-        <div className="grow-ans" style={{ "--d": "4.2s" } as React.CSSProperties}>
-          <div className="leaf leaf--0"></div>
-        </div>
-        <div className="grow-ans" style={{ "--d": "4.4s" } as React.CSSProperties}>
-          <div className="leaf leaf--1"></div>
-        </div>
-        <div className="grow-ans" style={{ "--d": "4.6s" } as React.CSSProperties}>
-          <div className="leaf leaf--2"></div>
-        </div>
-        <div className="grow-ans" style={{ "--d": "4.8s" } as React.CSSProperties}>
-          <div className="leaf leaf--3"></div>
-        </div>
-      </div>
-
-      <div className="long-g long-g--7">
-        <div className="grow-ans" style={{ "--d": "3s" } as React.CSSProperties}>
-          <div className="leaf leaf--0"></div>
-        </div>
-        <div className="grow-ans" style={{ "--d": "3.2s" } as React.CSSProperties}>
-          <div className="leaf leaf--1"></div>
-        </div>
-        <div className="grow-ans" style={{ "--d": "3.5s" } as React.CSSProperties}>
           <div className="leaf leaf--2"></div>
         </div>
         <div className="grow-ans" style={{ "--d": "3.6s" } as React.CSSProperties}>
@@ -1612,29 +1507,21 @@ export const Hero: React.FC = () => {
         <SideBouquet className="top-[35%] left-0 hidden md:block opacity-70" delay={0.5} />
         <SideBouquet className="top-[45%] right-0 scale-x-[-1] hidden md:block opacity-70" delay={0.7} />
 
-        {/* Drifting Gold Petals (Increased count for a richer look) */}
+        {/* Drifting Gold Petals (Optimized count) */}
         <DriftingPetal left="15%" top="75%" delay={0} duration={14} scale={0.9} />
         <DriftingPetal left="80%" top="60%" delay={3} duration={18} scale={0.7} />
         <DriftingPetal left="30%" top="45%" delay={6} duration={16} scale={0.8} />
         <DriftingPetal left="70%" top="30%" delay={1.5} duration={15} scale={1.0} />
         <DriftingPetal left="20%" top="25%" delay={8} duration={20} scale={0.6} />
         <DriftingPetal left="85%" top="80%" delay={4.5} duration={13} scale={0.85} />
-        <DriftingPetal left="40%" top="85%" delay={2.5} duration={17} scale={0.75} />
-        <DriftingPetal left="60%" top="70%" delay={5.5} duration={15} scale={0.95} />
-        <DriftingPetal left="10%" top="50%" delay={7} duration={19} scale={0.65} />
-        <DriftingPetal left="90%" top="40%" delay={9} duration={21} scale={0.8} />
 
-        {/* Drifting Pink Petals (Increased count for a richer look) */}
+        {/* Drifting Pink Petals (Optimized count) */}
         <DriftingPetal left="5%" top="80%" delay={1} duration={16} scale={0.8} isPink={true} />
         <DriftingPetal left="90%" top="55%" delay={4} duration={19} scale={0.65} isPink={true} />
         <DriftingPetal left="25%" top="35%" delay={7} duration={17} scale={0.75} isPink={true} />
         <DriftingPetal left="75%" top="20%" delay={2.5} duration={14} scale={0.9} isPink={true} />
         <DriftingPetal left="10%" top="15%" delay={9} duration={21} scale={0.55} isPink={true} />
         <DriftingPetal left="95%" top="75%" delay={5} duration={12} scale={0.8} isPink={true} />
-        <DriftingPetal left="50%" top="60%" delay={3.5} duration={15} scale={0.7} isPink={true} />
-        <DriftingPetal left="35%" top="75%" delay={8} duration={18} scale={0.85} isPink={true} />
-        <DriftingPetal left="65%" top="45%" delay={1.2} duration={16} scale={0.6} isPink={true} />
-        <DriftingPetal left="80%" top="30%" delay={6.2} duration={14} scale={0.95} isPink={true} />
       </motion.div>
 
       {/* Main Text Content */}
