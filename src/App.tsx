@@ -22,83 +22,78 @@ const IS_MAINTENANCE = true;
 function App() {
   if (IS_MAINTENANCE) {
     return (
-      <div className="relative min-h-screen bg-luxury-charcoal text-luxury-ivory overflow-hidden flex flex-col justify-between selection:bg-luxury-gold/30 selection:text-luxury-ivory">
-        {/* Global Background Elements */}
-        <BackgroundParticles />
+      <div className="min-h-screen bg-[#0a0a0a] text-[#ededed] font-sans flex flex-col justify-between p-6 md:p-12 selection:bg-[#333] selection:text-white">
+        {/* Top Header Bar */}
+        <div className="flex items-center justify-between border-b border-[#222] pb-6">
+          <div className="flex items-center gap-3">
+            <div className="w-3 h-3 rounded-full bg-[#ea4335] animate-pulse" />
+            <span className="text-xs uppercase tracking-widest text-[#888] font-mono">Status: Offline</span>
+          </div>
+          <span className="text-xs font-mono text-[#666]">HTTP 503 SERVICE UNAVAILABLE</span>
+        </div>
 
-        {/* Decorative Top Line */}
-        <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-luxury-gold/50 to-transparent" />
-
-        {/* Main Content Area */}
-        <div className="flex-1 flex items-center justify-center px-4 relative z-10">
-          <div className="max-w-xl w-full text-center py-16 px-8 rounded-2xl glass-panel relative overflow-hidden gold-border-glow">
-            {/* Subtle glow effect in the card background */}
-            <div className="absolute -top-24 -left-24 w-48 h-48 bg-luxury-gold/5 rounded-full filter blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-luxury-gold/5 rounded-full filter blur-3xl pointer-events-none" />
-
-            {/* Decorative Corner Ornaments */}
-            <div className="absolute top-4 left-4 w-4 h-4 border-t border-l border-luxury-gold/30" />
-            <div className="absolute top-4 right-4 w-4 h-4 border-t border-r border-luxury-gold/30" />
-            <div className="absolute bottom-4 left-4 w-4 h-4 border-b border-l border-luxury-gold/30" />
-            <div className="absolute bottom-4 right-4 w-4 h-4 border-b border-r border-luxury-gold/30" />
-
-            {/* Premium Logo / Monogram */}
-            <div className="w-16 h-16 border border-luxury-gold/30 rounded-full flex items-center justify-center font-serif text-lg tracking-widest text-luxury-gold mb-8 mx-auto select-none animate-pulse">
-              H&Y
-            </div>
-
-            {/* Arabic Message */}
-            <h1 className="font-serif text-3xl md:text-4xl text-luxury-gold tracking-wide mb-4 gold-gradient-text">
-              السيرفر متوقف حالياً
+        {/* Center Content */}
+        <div className="flex-1 flex flex-col justify-center max-w-2xl mx-auto w-full py-12">
+          {/* Main Error Title */}
+          <div className="space-y-4">
+            <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-2">
+              Error: Connection Refused
             </h1>
-            <p className="font-sans text-base md:text-lg text-luxury-ivory/80 leading-relaxed mb-8 font-light">
-              الموقع غير متوفر مؤقتاً بالوقت الحالي، يرجى التواصل مع المطور لمزيد من التفاصيل.
+            <p className="text-sm md:text-base text-[#a0a0a0] leading-relaxed">
+              The application server is currently not responding. This could be due to scheduled maintenance, server overload, or configuration updates.
             </p>
+          </div>
 
-            {/* Divider line */}
-            <div className="h-[1px] w-12 bg-luxury-gold/30 mx-auto mb-8" />
+          {/* Details / Arabic Explanation */}
+          <div className="mt-8 bg-[#111] border border-[#222] rounded-lg p-6 font-mono text-xs md:text-sm text-[#888] space-y-4">
+            <div className="flex items-start gap-2">
+              <span className="text-[#ea4335] select-none">▶</span>
+              <p className="text-[#ccc]">
+                <strong className="text-white">تفاصيل الخطأ:</strong> السيرفر متوقف حالياً. يرجى التواصل مع المطور (محمد سلامة) لإعادة تفعيل السيرفر.
+              </p>
+            </div>
+            <div className="flex items-start gap-2 border-t border-[#222] pt-4 mt-2">
+              <span className="text-[#888] select-none">▶</span>
+              <p>
+                <strong>Contact Developer To ReActive Site :</strong>{' '}
+                <a href="https://wa.me/201016981295" target="_blank" rel="noopener noreferrer" className="text-[#c5a880] hover:underline">
+                  WhatsApp: 01016981295
+                </a>
+              </p>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-[#888] select-none">▶</span>
+              <p>
+                <strong>Host System:</strong> Vercel Edge Network Deployment
+              </p>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-[#888] select-none">▶</span>
+              <p>
+                <strong>Timestamp:</strong> {new Date().toISOString()}
+              </p>
+            </div>
+          </div>
+        </div>
 
-            {/* English Message */}
-            <h2 className="font-serif text-xl text-luxury-ivory tracking-wide mb-2">
-              Server Temporarily Offline
-            </h2>
-            <p className="font-sans text-xs md:text-sm text-luxury-beige/60 tracking-wider leading-relaxed max-w-sm mx-auto font-light">
-              The service is currently unavailable. Please contact the developer  for further details.
-            </p>
-
+        {/* Minimal Footer */}
+        <div className="border-t border-[#222] pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-[#666] font-mono gap-4">
+          <div>
+            &copy; {new Date().getFullYear()} System Administrator. All rights reserved.
+          </div>
+          <div>
+            Need assistance?{' '}
             <a
               href="https://dev-mohamed-salama.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-luxury-gold-light transition-colors underline decoration-luxury-gold/20"
+              className="text-[#c5a880] hover:text-[#fff] underline transition-colors"
             >
-              Click here to contact Developer : Mohamed Salama
-            </a>
+              Click here to contact Developer: Mohamed Salama
+            </a>{' '}
+            (<a href="https://wa.me/201016981295" target="_blank" rel="noopener noreferrer" className="text-[#c5a880] hover:text-[#fff] transition-colors">WhatsApp</a>)
           </div>
         </div>
-
-        {/* Luxury Footer matching site identity */}
-        <footer className="relative py-12 bg-[#070707] border-t border-luxury-gold/15 text-center px-4 z-10">
-          <div className="max-w-md mx-auto flex flex-col items-center">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-luxury-gold/50 mb-4 select-none">
-              July 19, 2026 • AGA, Egypt
-            </p>
-            <p className="text-[9px] uppercase tracking-[0.25em] text-luxury-beige/40 mb-3">
-              Made with love • Thank you for celebrating with us
-            </p>
-            <p className="text-[8px] uppercase tracking-[0.2em] text-luxury-gold/45">
-              Developed by{' '}
-              <a
-                href="https://dev-mohamed-salama.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-luxury-gold-light transition-colors underline decoration-luxury-gold/20"
-              >
-                Mohamed Salama
-              </a>
-            </p>
-          </div>
-        </footer>
       </div>
     );
   }
