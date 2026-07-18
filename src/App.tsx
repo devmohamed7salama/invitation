@@ -16,7 +16,7 @@ import Lenis from 'lenis';
 // CONFIGURATION: TEMPORARY SITE DISABLE (MAINTENANCE MODE)
 // To activate the site again, change the value below from true to false.
 // لتفعيل الموقع مرة أخرى، قم بتغيير القيمة بالأسفل من true إلى false.
-const IS_MAINTENANCE = false;
+const IS_MAINTENANCE = true;
 // ==========================================
 
 function App() {
